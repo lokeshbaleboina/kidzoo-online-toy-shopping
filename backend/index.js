@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 const app = express()
 const port = process.env.PORT || 5000
 
-mongoose.connect("mongodb+srv://kidzoo:2508@cluster0.diurkr0.mongodb.net/kidzoodata",)
+mongoose.connect("process.env.MONGO_URI",)
   .then(async () => {
     console.log("connected");
     const fetched_data = await mongoose.connection.db.collection("toyscato");
