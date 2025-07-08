@@ -10,7 +10,7 @@ export default function Home() {
     const [cato, setcato] = useState([])
 
     const loadData = async () => {
-        let response = await fetch("http://localhost:5000/api/toysdata", {
+        let response = await fetch("https://kidzoo-online-toy-shopping-backend.onrender.com/api/toysdata", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
