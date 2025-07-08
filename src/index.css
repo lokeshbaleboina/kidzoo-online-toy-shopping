@@ -5,9 +5,156 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#carousel{
+  max-height: 300px;
+}
+/* ----------------------------------------------------
+   KidZoo – Soft‑Radiant Theme
+   ----------------------------------------------------
+   • pastel colours + gentle gradients
+   • subtle hover / entrance animations
+   • works on all pages: Home, My Orders, Cart modal,
+     Login / Signup, Navbar
+----------------------------------------------------- */
+
+/* ===== 1. root palette (easy to tweak later) ===== */
+:root{
+  --c-bg-1: #fefafd;
+  --c-bg-2: #e5f9ff;
+  --c-accent: #00acc1;      /* teal headline / links */
+  --c-accent-light: #b2ebf2;
+  --c-card-bg: #ffffffcc;   /* translucent white */
+  --c-shadow: 0 4px 16px rgba(0,0,0,.08);
+  --c-btn-primary: #ffb6b9;
+  --c-btn-primary-hover:#ffa5a8;
+  --c-btn-secondary:#a5d8ff;
+  --c-btn-danger: #ff8a80;
+  --rad: 14px;
+  --dur: .35s;
+  --fade: fadeIn .4s ease-in-out both;
+}
+
+/* ===== 2. global reset ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(120deg,var(--c-bg-1),var(--c-bg-2));
+  min-height:100vh;
+  color:#333;
+  overflow-x:hidden;
+}
+
+/* scrollbar nicer for long order history */
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-thumb{background:var(--c-accent-light);border-radius:4px;}
+
+/* ===== 3. navbar ===== */
+.navbar{
+  background:var(--c-btn-secondary)!important;
+  border-bottom:2px solid var(--c-accent-light);
+  box-shadow:var(--c-shadow);
+}
+.navbar-brand{
+  font-weight:700;
+  color:var(--c-accent)!important;
+  letter-spacing:.5px;
+}
+.nav-link{color:#004d60!important;}
+.nav-link.active{font-weight:600;}
+
+.btn{
+  border-radius:var(--rad)!important;
+  transition:transform var(--dur);
+}
+.btn:hover{transform:translateY(-2px);}
+.btn-add{
+  background:var(--c-btn-primary)!important;
+  color:#7a0006!important;
+}
+.btn-add:hover{background:var(--c-btn-primary-hover)!important;}
+
+.btn-danger:hover{background:var(--c-btn-danger)!important;transform:scale(1.05);}
+.btn-success:hover{background:#66bb6a!important;transform:scale(1.05);}
+
+/* ===== 4. carousel & search ===== */
+#carousel{
+  filter:drop-shadow(0 6px 12px rgba(0,0,0,.12));
+}
+.carousel-item img{object-fit:cover;height:600px;}
+.carousel-caption input{
+  max-width:600px;
+  border-radius:var(--rad);
+  border:none;
+  padding:.65rem 1rem;
+  box-shadow:var(--c-shadow);
+}
+
+/* ===== 5. product card ===== */
+.card{
+  background:var(--c-card-bg);
+  backdrop-filter:blur(6px);
+  border:none;
+  border-radius:var(--rad);
+  box-shadow:var(--c-shadow);
+  transition:transform var(--dur),box-shadow var(--dur);
+  animation:var(--fade);
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 6px 20px rgba(0,0,0,.12);
+}
+.card-img-top{
+  height:150px;
+  object-fit:contain;
+  padding:10px;
+  border-top-left-radius:var(--rad);
+  border-top-right-radius:var(--rad);
+}
+
+/* ===== 6. forms (login / signup / checkout inputs) ===== */
+.container form{
+  animation:var(--fade);
+  max-width:680px;
+}
+.form-label{color:var(--c-accent);font-weight:500;}
+.form-control, select{
+  border:1px solid #ddd;
+  border-radius:var(--rad);
+  transition:border-color var(--dur),box-shadow var(--dur);
+}
+.form-control:focus, select:focus{
+  border-color:var(--c-accent);
+  box-shadow:0 0 0 3px var(--c-accent-light);
+}
+
+/* ===== 7. checkout / cart modal ===== */
+.modal-content{
+  background:var(--c-card-bg);
+  border-radius:20px;
+  backdrop-filter:blur(8px);
+  border:2px dashed var(--c-btn-secondary);
+  box-shadow:var(--c-shadow);
+}
+
+/* ===== 8. table in cart ===== */
+.table>thead{font-size:1.1rem;color:var(--c-accent);}
+.table tbody tr:hover{background:#f1fcff;}
+
+/* ===== 9. section titles ===== */
+.fs-3, .section-title{
+  color:var(--c-accent);
+  font-weight:600;
+}
+
+/* ===== 10. simple fade‑in keyframes ===== */
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(12px);}
+  to{opacity:1;transform:translateY(0);}
 }
