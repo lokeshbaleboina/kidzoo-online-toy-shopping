@@ -17,7 +17,7 @@ mongoose.connect("mongodb+srv://kidzoo:2508@cluster0.diurkr0.mongodb.net/kidzood
 
   })
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000")
+  res.setHeader("Access-Control-Allow-Origin", "https://kidzoo-online-toy-shopping-frontend.onrender.com")
   res.header(
     "Access-Control-Allow-Headers",
     "Origin,X-Requested-With,Content-Type,Accept",
